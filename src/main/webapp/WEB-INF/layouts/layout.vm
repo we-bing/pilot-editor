@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Webing Pilot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- java script Lib -->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <!-- View abc.vm is inserted here -->
+    <!-- Noi dung View abc.vm se duoc tren tai day -->
+    $screen_content
+
+    <footer class="footer">
+        <p>Copyright &copy; Webing.</p>
+    </footer>
+</div>
+
+
+<script type="text/javascript" src="/js/loginAndRegist.js"></script>
+
+
+
+</body>
+</html>
