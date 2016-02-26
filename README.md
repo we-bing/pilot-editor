@@ -12,11 +12,9 @@ Features:
 
 Set up Webing environment
 -----------
-firstly, you need to install mysql, tomcat and maven.
+우선 mysql, maven, tomcat등의 패키지를 설치한 후에 진행하셔야합니다.
 
-after dependencies is installed , you can follow below commands.
-
-To deploy a war file on tomcat, you have to config the authentication about tomcat and maven.
+메이븐과 톰캣을 이용해서 배포 테스트를 할려면 아래 설정이 필요합니다.
 
 ```
 # %TOMCAT_PATH%/conf/tomcat-user.xml
