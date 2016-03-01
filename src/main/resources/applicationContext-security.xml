@@ -31,14 +31,12 @@
                     password-parameter="password" login-processing-url="/signinprocess"
                     default-target-url="/index"
                     authentication-failure-url="/signin?error=bad_credentials"
-                />
+        />
 
         <logout
                 logout-success-url="/signin"
                 invalidate-session="true"/>
     </http>
-
-
 
 
 </beans:beans>

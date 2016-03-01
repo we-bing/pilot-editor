@@ -70,6 +70,7 @@ public class SocialController {
 
         return "redirect:/";
     }
+
     private String getFBAccessToken(String code) throws IOException {
         String accessToken = "";
         if (StringUtils.isNotEmpty(code)) {
@@ -108,8 +109,6 @@ public class SocialController {
         user.setPassword("");
         return user;
     }
-
-
 
 
     @RequestMapping(value = "/kakao")

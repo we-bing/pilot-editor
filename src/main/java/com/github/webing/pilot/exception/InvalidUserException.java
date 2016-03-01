@@ -15,6 +15,6 @@ public class InvalidUserException extends RuntimeException {
     }
 
     public InvalidUserException(String s, Throwable e) {
-        super(s,e);
+        super(s, e);
     }
 }

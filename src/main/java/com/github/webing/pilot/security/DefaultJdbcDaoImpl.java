@@ -34,7 +34,7 @@ public class DefaultJdbcDaoImpl implements UserDetailsService {
             throws UsernameNotFoundException {
         System.out.println(sqlSession);
         User user = sqlSession.getMapper(UserRepository.class).findUserByIdentity(identity);
-        if(user == null){
+        if (user == null) {
             throw new InvalidUserException("가입된 유저가 아닙니다. 회원가입을 해주세요.");
         }
         if (user.getIsOAuth().equals("T")) {

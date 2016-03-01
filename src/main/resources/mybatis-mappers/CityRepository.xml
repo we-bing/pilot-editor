@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.github.webing.pilot.repository.CityRepository">
+
+    <select id="findAll" resultType="com.github.webing.pilot.model.City">
+        SELECT *
+        FROM CITIES
+        ORDER BY cityCode ASC
+    </select>
+
+
+    <select id="findCityByCode" parameterType="int" resultType="com.github.webing.pilot.model.City">
+        SELECT *
+        FROM CITIES
+        WHERE cityCode = #{cityCode}
+    </select>
+
+    <select id="findCityByName" parameterType="java.lang.String" resultType="com.github.webing.pilot.model.City">
+        SELECT *
+        FROM CITIES
+        WHERE cityName = #{cityName}
+    </select>
+
+</mapper>
+
+

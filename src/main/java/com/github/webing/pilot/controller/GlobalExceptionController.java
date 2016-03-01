@@ -20,7 +20,6 @@ public class GlobalExceptionController {
             LoggerFactory.getLogger(GlobalExceptionController.class);
 
 
-
     @ExceptionHandler(RuntimeException.class)
     public ModelAndView catchRuntimeException(RuntimeException e) {
         logger.debug(e.getMessage());

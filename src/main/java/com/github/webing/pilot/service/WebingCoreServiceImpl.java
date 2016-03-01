@@ -1,10 +1,13 @@
 package com.github.webing.pilot.service;
 
 import com.github.webing.pilot.exception.InvalidUserException;
+import com.github.webing.pilot.model.City;
 import com.github.webing.pilot.model.User;
 import com.github.webing.pilot.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by KD4 on 16. 2. 25..
@@ -15,6 +18,9 @@ public class WebingCoreServiceImpl implements WebingCoreService {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    RegionService regionService;
 
     @Override
     public User getUserByIdentity(String identity) {
@@ -52,4 +58,21 @@ public class WebingCoreServiceImpl implements WebingCoreService {
     public void securityLogin(User user) {
         SecurityUtil.logInUser(user);
     }
+
+    @Override
+    public List<City> getAllCites() {
+        return regionService.getAllCities();
+    }
+
+    @Override
+    public City getCityByCode(int cityCode) {
+        return regionService.getCityByCode(cityCode);
+    }
+
+    @Override
+    public City getCityByName(String cityName) {
+        return regionService.getCityByName(cityName);
+    }
+
+
 }

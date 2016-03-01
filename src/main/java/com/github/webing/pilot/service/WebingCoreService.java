@@ -1,6 +1,9 @@
 package com.github.webing.pilot.service;
 
+import com.github.webing.pilot.model.City;
 import com.github.webing.pilot.model.User;
+
+import java.util.List;
 
 /**
  * Created by KD4 on 16. 2. 25..
@@ -15,4 +18,10 @@ public interface WebingCoreService {
     User existUserByIdentity(String identity);
 
     void securityLogin(User user);
+
+    List<City> getAllCites();
+
+    City getCityByCode(int cityCode);
+
+    City getCityByName(String cityName);
 }
