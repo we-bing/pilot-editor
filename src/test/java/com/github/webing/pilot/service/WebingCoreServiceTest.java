@@ -1,6 +1,7 @@
 package com.github.webing.pilot.service;
 
 import com.github.webing.pilot.model.City;
+import com.github.webing.pilot.model.District;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,5 +36,26 @@ public class WebingCoreServiceTest {
         City cityCode4900 = webingCoreService.getCityByCode(4900);
         City jejuCity = webingCoreService.getCityByName("제주특별자치도");
         Assert.assertEquals(cityCode4900.getCityCode(),jejuCity.getCityCode());
+    }
+
+    @Test
+    public void getAllDistricts() {
+        List<District> districts = webingCoreService.getAllDistricts();
+        Assert.assertNotNull(districts);
+    }
+
+    @Test
+    public void getDistrictWithTerms() {
+        District district2110301 = webingCoreService.getDistrictByDistrictCode(2110301);
+        District yongSanDistrict  = webingCoreService.getDistrictByDistrictName("용산구");
+        Assert.assertEquals(district2110301.getCityCode(),yongSanDistrict.getCityCode());
+        Assert.assertEquals(district2110301.getDistrictName(),yongSanDistrict.getDistrictName());
+
+        List<District> districtsOnJeju = webingCoreService.getDistrictsByCityCode(4900);
+        Assert.assertThat(districtsOnJeju.get(0).getCityCode(),is(4900));
+
+        for(District district : districtsOnJeju){
+            System.out.println(district.getDistrictName());
+        }
     }
 }

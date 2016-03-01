@@ -2,6 +2,7 @@ package com.github.webing.pilot.service;
 
 import com.github.webing.pilot.exception.InvalidUserException;
 import com.github.webing.pilot.model.City;
+import com.github.webing.pilot.model.District;
 import com.github.webing.pilot.model.User;
 import com.github.webing.pilot.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,26 @@ public class WebingCoreServiceImpl implements WebingCoreService {
     @Override
     public City getCityByName(String cityName) {
         return regionService.getCityByName(cityName);
+    }
+
+    @Override
+    public List<District> getAllDistricts() {
+        return regionService.getAllDistricts();
+    }
+
+    @Override
+    public District getDistrictByDistrictCode(int districtCode) {
+        return regionService.getDistrictByDistrictCode(districtCode);
+    }
+
+    @Override
+    public District getDistrictByDistrictName(String districtName) {
+        return regionService.getDistrictByDistrictName(districtName);
+    }
+
+    @Override
+    public List<District> getDistrictsByCityCode(int cityCode) {
+        return regionService.getDistrictsByCityCode(cityCode);
     }
 
 
