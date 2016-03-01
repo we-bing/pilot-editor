@@ -1,0 +1,38 @@
+package com.github.webing.pilot.service;
+
+import com.github.webing.pilot.model.CandidacyMember;
+import com.github.webing.pilot.repository.CandidacyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Created by kd4 on 2016. 3. 1..
+ */
+@Service
+public class CandidacyServiceImpl implements CandidacyService {
+
+    @Autowired
+    CandidacyRepository candidacyRepository;
+
+    @Override
+    public List<CandidacyMember> getAllCandidacyMembers() {
+        return candidacyRepository.findAll();
+    }
+
+    @Override
+    public List<CandidacyMember> getCandidacyMemberByName(String name) {
+        return candidacyRepository.findByName(name);
+    }
+
+    @Override
+    public CandidacyMember getCandidacyMemberByCandidacyId(int candidacyId) {
+        return candidacyRepository.findByCandidacyId(candidacyId);
+    }
+
+    @Override
+    public List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode) {
+        return candidacyRepository.findAllByDistrictCode(districtCode);
+    }
+}

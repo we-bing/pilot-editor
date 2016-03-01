@@ -1,5 +1,6 @@
 package com.github.webing.pilot.service;
 
+import com.github.webing.pilot.model.CandidacyMember;
 import com.github.webing.pilot.model.City;
 import com.github.webing.pilot.model.District;
 import com.github.webing.pilot.model.User;
@@ -33,4 +34,12 @@ public interface WebingCoreService {
     District getDistrictByDistrictName(String districtName);
 
     List<District> getDistrictsByCityCode(int cityCode);
+
+    List<CandidacyMember> getAllCandidacyMembers();
+
+    List<CandidacyMember> getCandidacyMemberByName(String name);
+
+    CandidacyMember getCandidacyMemberByCandidacyId(int candidacyId);
+
+    List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode);
 }

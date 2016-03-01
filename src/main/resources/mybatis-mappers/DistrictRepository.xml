@@ -18,7 +18,8 @@
         WHERE districtCode = #{districtCode}
     </select>
 
-    <select id="findDistrictByDistrictName" parameterType="java.lang.String" resultType="com.github.webing.pilot.model.District">
+    <select id="findDistrictByDistrictName" parameterType="java.lang.String"
+            resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
         WHERE districtName = #{districtName}
@@ -29,7 +30,6 @@
         FROM DISTRICTS
         WHERE cityCode = #{cityCode}
     </select>
-
 
 
 </mapper>

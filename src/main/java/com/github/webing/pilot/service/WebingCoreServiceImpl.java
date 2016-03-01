@@ -1,6 +1,7 @@
 package com.github.webing.pilot.service;
 
 import com.github.webing.pilot.exception.InvalidUserException;
+import com.github.webing.pilot.model.CandidacyMember;
 import com.github.webing.pilot.model.City;
 import com.github.webing.pilot.model.District;
 import com.github.webing.pilot.model.User;
@@ -22,6 +23,9 @@ public class WebingCoreServiceImpl implements WebingCoreService {
 
     @Autowired
     RegionService regionService;
+
+    @Autowired
+    CandidacyService candidacyService;
 
     @Override
     public User getUserByIdentity(String identity) {
@@ -93,6 +97,26 @@ public class WebingCoreServiceImpl implements WebingCoreService {
     @Override
     public List<District> getDistrictsByCityCode(int cityCode) {
         return regionService.getDistrictsByCityCode(cityCode);
+    }
+
+    @Override
+    public List<CandidacyMember> getAllCandidacyMembers() {
+        return candidacyService.getAllCandidacyMembers();
+    }
+
+    @Override
+    public List<CandidacyMember> getCandidacyMemberByName(String name) {
+        return candidacyService.getCandidacyMemberByName(name);
+    }
+
+    @Override
+    public CandidacyMember getCandidacyMemberByCandidacyId(int candidacyId) {
+        return candidacyService.getCandidacyMemberByCandidacyId(candidacyId);
+    }
+
+    @Override
+    public List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode) {
+        return candidacyService.getCandidacyMembersByDistrictCode(districtCode);
     }
 
 
