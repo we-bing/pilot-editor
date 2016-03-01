@@ -15,20 +15,20 @@
     <select id="findByName" parameterType="java.lang.String" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
         FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
-        WHERE name = #{name}
+        WHERE mem.name = #{name}
     </select>
 
     <select id="findByCandidacyId" parameterType="int" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
         FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
-        WHERE candidacyId = #{candidacyId}
+        WHERE mem.candidacyId = #{candidacyId}
     </select>
 
 
     <select id="findAllByDistrictCode" parameterType="int" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
         FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
-        WHERE districtCode = #{districtCode}
+        WHERE mem.districtCode = #{districtCode}
     </select>
 
 
