@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Webing Pilot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/candidacies.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+          <div id="admin-header" class="header">
+            <a href="/"><h3 class="text-muted">Webing Pilot - Admin Page</h3></a>
+          </div>
+          <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="/candidacies">후보자</a></li>
+              <form id="admin-nav-search" data-source='candidacies' class="navbar-form navbar-right" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="search-keyword" placeholder="후보자 이름, 선거구">
+                  </div>
+                  <button type="submit" class="btn btn-default">검색</button>
+              </form>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row"></div>
+            <div class="col-lg-3">
+              <div class="btn-group cities-btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle selected-city" data-toggle="dropdown" aria-expanded="false" data-citycode='0'>
+                  시/도 선택 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" data-citycode="1100">서울특별시</a></li>
+                  <li><a href="#" data-citycode="2600">부산광역시</a></li>
+                  <li><a href="#" data-citycode="2700">대구광역시</a></li>
+                  <li><a href="#" data-citycode="2800">인천광역시</a></li> 
+                  <li><a href="#" data-citycode="3000">대전광역시</a></li>
+                  <li><a href="#" data-citycode="3100">울산광역시</a></li>
+                  <li><a href="#" data-citycode="4100">경기도</a></li>
+                  <li><a href="#" data-citycode="4200">강원도</a></li>
+                  <li><a href="#" data-citycode="4300">충청북도</a></li>
+                  <li><a href="#" data-citycode="4400">충청남도</a></li>
+                  <li><a href="#" data-citycode="4500">전라북도</a></li>
+                  <li><a href="#" data-citycode="4600">전라남도</a></li>
+                  <li><a href="#" data-citycode="4700">경상북도</a></li>
+                  <li><a href="#" data-citycode="4800">경상남도</a></li>
+                  <li><a href="#" data-citycode="4900">제주특별자치도</a></li>
+                  <li><a href="#" data-citycode="5100">세종특별자치시</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="도시를 선택하고 선거구를 입력하세요.">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">확인하기</button>
+                </span>
+              </div><!-- /input-group -->
+            </div>
+        </div>
+      </div>
+      <div class="row marketing">
+
+          <div class="panel panel-default">
+              <!-- Table -->
+              <table class="table">
+                  <thead>
+                  <th width="9%">상태</th>
+                  <th width="30%">이름</th>
+                  <th width="30%">선거구</th>
+                  <th width="21%">생년월일</th>
+                  <th width="10%">정당</th>
+                  </thead>
+                  <tbody id="candidacy-table">
+                          <tr class="post-tr modal-up-post" data-candidacyId="0">
+                              <td>C</td>
+                              <td>안철수</td>
+                              <td>논현구</td>
+                              <td class="admin-tbody-date">1966/05/15(50세)</td>
+                              <td>국민의당</td>
+                          </tr>
+                          <tr class="post-tr modal-up-post" data-candidacyId="0">
+                              <td>C</td>
+                              <td>안철수</td>
+                              <td>논현구</td>
+                              <td class="admin-tbody-date">1966/05/15(50세)</td>
+                              <td>국민의당</td>
+                          </tr>
+                          <tr class="post-tr modal-up-post" data-candidacyId="0">
+                              <td>C</td>
+                              <td>안철수</td>
+                              <td>논현구</td>
+                              <td class="admin-tbody-date">1966/05/15(50세)</td>
+                              <td>국민의당</td>
+                          </tr>
+                          <tr class="post-tr modal-up-post" data-candidacyId="0">
+                              <td>C</td>
+                              <td>안철수</td>
+                              <td>논현구</td>
+                              <td class="admin-tbody-date">1966/05/15(50세)</td>
+                              <td>국민의당</td>
+                          </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="candidacy-modal" tabindex="-1" role="dialog" aria-labelledby="candidacy-ModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                              aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="candidacy-ModalLabel">후보자 정보</h4>
+                  </div>
+                  <form id="candidacy-modal-form">
+                      <div class="modal-body">
+                          <input type="hidden" id="modal-candidacy-id" name="candidacyId" value="0"/>
+                          <input type="hidden" id="modal-district-code" value="0"/>
+                          <div class="form-group">
+                            <label for="candidacy-name">후보자 이름</label>
+                            <input type="text" class="form-control" id="candidacy-name" value="안철수" readonly>
+                          </div>
+                          <div class="form-group">
+                            <label for="candidacy-birth">생년월일</label>
+                            <input type="text" class="form-control" id="candidacy-birth" value="1955/10/10(50세)" readonly>
+                          </div>
+                          <div class="form-group">
+                            <label for="district-name">선거구</label>
+                            <input type="text" class="form-control" id="district-name" value="용산구" readonly>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/candidacies.js">
+      
+    </script>
+  </body>
+</html>
