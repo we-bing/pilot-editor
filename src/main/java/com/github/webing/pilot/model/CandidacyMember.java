@@ -7,6 +7,7 @@ public class CandidacyMember {
     private int candidacyId;
     private String name;
     private String birth;
+    private String party;
     private int districtCode;
     private String districtName;
     private String candidacyStatus;
@@ -57,5 +58,13 @@ public class CandidacyMember {
 
     public void setCandidacyStatus(String candidacyStatus) {
         this.candidacyStatus = candidacyStatus;
+    }
+
+    public String getParty() {
+        return party;
+    }
+
+    public void setParty(String party) {
+        this.party = party;
     }
 }

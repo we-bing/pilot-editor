@@ -22,4 +22,8 @@ public interface RegionService {
     District getDistrictByDistrictName(String districtName);
 
     List<District> getDistrictsByCityCode(int cityCode);
+
+    List<District> getDistrictsWithTerms(int cityCode, String query);
+
+    int getDistrictWithTerms(int cityCode, String districtName);
 }

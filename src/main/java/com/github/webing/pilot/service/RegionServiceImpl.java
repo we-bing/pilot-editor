@@ -55,4 +55,20 @@ public class RegionServiceImpl implements RegionService {
     public List<District> getDistrictsByCityCode(int cityCode) {
         return districtRepository.findDistrictsByCityCode(cityCode);
     }
+
+    @Override
+    public List<District> getDistrictsWithTerms(int cityCode, String query) {
+        District district = new District();
+        district.setCityCode(cityCode);
+        district.setDistrictName(query);
+        return districtRepository.findDistrictsWithTerms(district);
+    }
+
+    @Override
+    public int getDistrictWithTerms(int cityCode, String districtName) {
+        District district = new District();
+        district.setCityCode(cityCode);
+        district.setDistrictName(districtName);
+        return districtRepository.findDistrictWithTerms(district).getDistrictCode();
+    }
 }

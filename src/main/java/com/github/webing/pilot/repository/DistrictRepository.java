@@ -19,4 +19,8 @@ public interface DistrictRepository {
     District findDistrictByDistrictCode(int districtCode);
 
     List<District> findDistrictsByCityCode(int cityCode);
+
+    List<District> findDistrictsWithTerms(District district);
+
+    District findDistrictWithTerms(District district);
 }

@@ -1,6 +1,8 @@
 package com.github.webing.pilot.service;
 
+import com.github.webing.pilot.model.CandidacyKeyword;
 import com.github.webing.pilot.model.CandidacyMember;
+import com.github.webing.pilot.model.CandidacyPledge;
 import com.github.webing.pilot.repository.CandidacyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +36,41 @@ public class CandidacyServiceImpl implements CandidacyService {
     @Override
     public List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode) {
         return candidacyRepository.findAllByDistrictCode(districtCode);
+    }
+
+    @Override
+    public List<CandidacyKeyword> getCandidacyKeywordsWithCandidacyId(int candidacyId) {
+        return candidacyRepository.findKeywordsByCandidacyId(candidacyId);
+    }
+
+    @Override
+    public List<CandidacyPledge> getCandidacyPledgesWithCandidacyId(int candidacyId) {
+        return candidacyRepository.findPledgesByCandidacyId(candidacyId);
+    }
+
+    @Override
+    public void resetKeywordsWithCandidacyId(int candidacyId, List<String> keywords) {
+        candidacyRepository.deleteKeywordsWithCandidacyId(candidacyId);
+        CandidacyKeyword candidacyKeyword = new CandidacyKeyword();
+        candidacyKeyword.setCandidacyId(candidacyId);
+        for (String keyword : keywords) {
+            candidacyKeyword.setKeywordName(keyword);
+            candidacyRepository.insertKeywordWithCandidacyId(candidacyKeyword);
+        }
+    }
+
+    @Override
+    public void resetCandidacyPledges(int candidacyId, List<CandidacyPledge> pledges) {
+        candidacyRepository.deletePledgesWithCandidacyId(candidacyId);
+
+        for (CandidacyPledge pledge : pledges) {
+            pledge.setCandidacyId(candidacyId);
+            candidacyRepository.insertPledgeWithCandidacyId(pledge);
+        }
+    }
+
+    @Override
+    public void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember) {
+        candidacyRepository.updateStatusByCandidacyId(candidacyMember);
     }
 }

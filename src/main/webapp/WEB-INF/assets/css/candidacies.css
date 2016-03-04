@@ -5,9 +5,11 @@
 #admin-header {
     border-bottom: 0px;
 }
-.nav-tabs{
-	border-bottom: 0px;
+
+.nav-tabs {
+    border-bottom: 0px;
 }
+
 .admin-tbody-date {
     font-size: 80%;
 }
@@ -28,10 +30,14 @@
 }
 
 .pledge {
-	border-top:1px solid #eee;
-	border-bottom:1px solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-.pledge .form-group{
-	margin-top:5px;
-} 
+.pledge .form-group {
+    margin-top: 5px;
+}
+
+.checked-row {
+    background: #DDEEDD;
+}

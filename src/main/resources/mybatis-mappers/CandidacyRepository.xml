@@ -32,6 +32,46 @@
     </select>
 
 
+    <select id="findKeywordsByCandidacyId" parameterType="int"
+            resultType="com.github.webing.pilot.model.CandidacyKeyword">
+        SELECT *
+        FROM CANDIDACY_KEYWORDS
+        WHERE candidacyId = #{candidacyId}
+    </select>
+
+
+    <select id="findPledgesByCandidacyId" parameterType="int"
+            resultType="com.github.webing.pilot.model.CandidacyPledge">
+        SELECT *
+        FROM CANDIDACY_PLEDGE
+        WHERE candidacyId = #{candidacyId}
+    </select>
+
+    <delete id="deleteKeywordsWithCandidacyId" parameterType="int">
+        DELETE
+        FROM CANDIDACY_KEYWORDS
+        WHERE candidacyId = #{candidacyId}
+    </delete>
+
+    <insert id="insertKeywordWithCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyKeyword">
+        INSERT INTO CANDIDACY_KEYWORDS(candidacyId,keywordName) VALUES(#{candidacyId},#{keywordName})
+    </insert>
+
+    <delete id="deletePledgesWithCandidacyId" parameterType="int">
+        DELETE
+        FROM CANDIDACY_PLEDGE
+        WHERE candidacyId = #{candidacyId}
+    </delete>
+
+    <insert id="insertPledgeWithCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyPledge">
+        INSERT INTO CANDIDACY_PLEDGE(candidacyId,pledgeTitle,pledgeDescription) VALUES(#{candidacyId},#{pledgeTitle},#{pledgeDescription})
+    </insert>
+
+    <update id="updateStatusByCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyMember">
+        UPDATE CANDIDACY_MEMBERS SET candidacyStatus = #{candidacyStatus} WHERE candidacyId = #{candidacyId}
+    </update>
+
+
 </mapper>
 
 

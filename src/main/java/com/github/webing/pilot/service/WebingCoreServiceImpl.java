@@ -1,10 +1,7 @@
 package com.github.webing.pilot.service;
 
 import com.github.webing.pilot.exception.InvalidUserException;
-import com.github.webing.pilot.model.CandidacyMember;
-import com.github.webing.pilot.model.City;
-import com.github.webing.pilot.model.District;
-import com.github.webing.pilot.model.User;
+import com.github.webing.pilot.model.*;
 import com.github.webing.pilot.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -117,6 +114,41 @@ public class WebingCoreServiceImpl implements WebingCoreService {
     @Override
     public List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode) {
         return candidacyService.getCandidacyMembersByDistrictCode(districtCode);
+    }
+
+    @Override
+    public List<District> getDistrictsWithTerms(int cityCode, String query) {
+        return regionService.getDistrictsWithTerms(cityCode, query);
+    }
+
+    @Override
+    public int getDistrictWithTerms(int cityCode, String districtName) {
+        return regionService.getDistrictWithTerms(cityCode, districtName);
+    }
+
+    @Override
+    public List<CandidacyKeyword> getCandidacyKeywordsWithCandidacyId(int candidacyId) {
+        return candidacyService.getCandidacyKeywordsWithCandidacyId(candidacyId);
+    }
+
+    @Override
+    public List<CandidacyPledge> getCandidacyPledgesWithCandidacyId(int candidacyId) {
+        return candidacyService.getCandidacyPledgesWithCandidacyId(candidacyId);
+    }
+
+    @Override
+    public void resetKeywordsWithCandidacyId(int candidacyId, List<String> keywords) {
+        candidacyService.resetKeywordsWithCandidacyId(candidacyId, keywords);
+    }
+
+    @Override
+    public void resetCandidacyPledges(int candidacyId, List<CandidacyPledge> pledges) {
+        candidacyService.resetCandidacyPledges(candidacyId, pledges);
+    }
+
+    @Override
+    public void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember) {
+        candidacyService.updateCandidacyStatusWithCandidacyId(candidacyMember);
     }
 
 

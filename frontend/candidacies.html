@@ -11,6 +11,12 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Jquery-Ui core CSS -->
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+
+    <!-- Jquery-Ui core CSS -->
+    <link href="assets/css/jquery.tagit.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
 
@@ -146,8 +152,53 @@
                             <label for="district-name">선거구</label>
                             <input type="text" class="form-control" id="district-name" value="용산구" readonly>
                           </div>
+                          <div class="form-group">
+                          <label for="candidacy-keywords">뉴스 키워드들</label>
+                            <ul id="candidacy-keywords">
+                                <!-- Existing list items will be pre-added to the tags -->
+                                <li>대선</li>
+                                <li>공천</li>
+                            </ul>
+                          </div>
+                          <div class="pledge">
+                            <div class="form-group">
+                              <label>공약 제목</label>
+                              <input type="text" class="form-control pledge-title" value="마포를 중심으로!">
+                            </div>
+                            <div class="form-group">
+                              <label>공약 상세</label>
+                              <textarea class="form-control pledge-descriptions" rows="3"></textarea>
+                            </div>
+                          </div>
+                          <div class="pledge">
+                            <div class="form-group">
+                              <label>공약 제목</label>
+                              <input type="text" class="form-control pledge-title" value="마포를 중심으로!">
+                            </div>
+                            <div class="form-group">
+                              <label>공약 상세</label>
+                              <textarea class="form-control pledge-descriptions" rows="3"></textarea>
+                            </div>
+                          </div>
+                          <div class="pledge">
+                            <div class="form-group">
+                              <label>공약 제목</label>
+                              <input type="text" class="form-control pledge-title" value="마포를 중심으로!">
+                            </div>
+                            <div class="form-group">
+                              <label>공약 상세</label>
+                              <textarea class="form-control pledge-descriptions" rows="3"></textarea>
+                            </div>
+                          </div>
+
+                          <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> checked
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> unchecked
+                          </label>
                       </div>
-                      <div class="modal-footer">
+                      <div class="modal-footer dropup">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-primary">Save changes</button>
                       </div>
@@ -157,7 +208,9 @@
     </div>
     </div>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/tag-it.min.js"></script>
     <script type="text/javascript" src="assets/js/candidacies.js">
       
     </script>

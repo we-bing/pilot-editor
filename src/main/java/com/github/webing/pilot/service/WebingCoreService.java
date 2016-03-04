@@ -1,9 +1,6 @@
 package com.github.webing.pilot.service;
 
-import com.github.webing.pilot.model.CandidacyMember;
-import com.github.webing.pilot.model.City;
-import com.github.webing.pilot.model.District;
-import com.github.webing.pilot.model.User;
+import com.github.webing.pilot.model.*;
 
 import java.util.List;
 
@@ -42,4 +39,19 @@ public interface WebingCoreService {
     CandidacyMember getCandidacyMemberByCandidacyId(int candidacyId);
 
     List<CandidacyMember> getCandidacyMembersByDistrictCode(int districtCode);
+
+    List<District> getDistrictsWithTerms(int cityCode, String query);
+
+    int getDistrictWithTerms(int cityCode, String districtName);
+
+    List<CandidacyKeyword> getCandidacyKeywordsWithCandidacyId(int candidacyId);
+
+    List<CandidacyPledge> getCandidacyPledgesWithCandidacyId(int candidacyId);
+
+    void resetKeywordsWithCandidacyId(int candidacyId, List<String> keywords);
+
+    void resetCandidacyPledges(int candidacyId, List<CandidacyPledge> pledges);
+
+    void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember);
+
 }

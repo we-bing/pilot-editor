@@ -39,6 +39,8 @@
                 $('#candidacy-modal').modal('toggle');
         //     }
         // });
+        $("#candidacy-keywords").tagit();
+        
     });
 
 

@@ -31,7 +31,19 @@
         WHERE cityCode = #{cityCode}
     </select>
 
+    <select id="findDistrictsWithTerms" parameterType="com.github.webing.pilot.model.District"
+            resultType="com.github.webing.pilot.model.District">
+        SELECT *
+        FROM DISTRICTS
+        WHERE cityCode = #{cityCode} AND districtName LIKE CONCAT("%", #{districtName}, "%")
+    </select>
 
+    <select id="findDistrictWithTerms" parameterType="com.github.webing.pilot.model.District"
+            resultType="com.github.webing.pilot.model.District">
+        SELECT *
+        FROM DISTRICTS
+        WHERE cityCode = #{cityCode} AND districtName = #{districtName}
+    </select>
 </mapper>
 
 
