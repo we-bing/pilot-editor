@@ -9,13 +9,13 @@ import java.util.Date;
 public class User {
     private int id;
     private String identity;
-    private String isOAuth;
+    private String is_oauth;
     private String email;
     private String name;
     private String password;
-    private String userStatus;
+    private String user_status;
     private String roles;
-    private Date registeredAt;
+    private Date registered_at;
 
     public int getId() {
         return id;
@@ -31,6 +31,14 @@ public class User {
 
     public void setIdentity(String identity) {
         this.identity = identity;
+    }
+
+    public String getIs_oauth() {
+        return is_oauth;
+    }
+
+    public void setIs_oauth(String is_oauth) {
+        this.is_oauth = is_oauth;
     }
 
     public String getEmail() {
@@ -57,13 +65,12 @@ public class User {
         this.password = password;
     }
 
-
-    public String getUserStatus() {
-        return userStatus;
+    public String getUser_status() {
+        return user_status;
     }
 
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
+    public void setUser_status(String user_status) {
+        this.user_status = user_status;
     }
 
     public String getRoles() {
@@ -74,20 +81,11 @@ public class User {
         this.roles = roles;
     }
 
-
-    public String getIsOAuth() {
-        return isOAuth;
+    public Date getRegistered_at() {
+        return registered_at;
     }
 
-    public void setIsOAuth(String isOAuth) {
-        this.isOAuth = isOAuth;
-    }
-
-    public Date getRegisteredAt() {
-        return registeredAt;
-    }
-
-    public void setRegisteredAt(Date registeredAt) {
-        this.registeredAt = registeredAt;
+    public void setRegistered_at(Date registered_at) {
+        this.registered_at = registered_at;
     }
 }

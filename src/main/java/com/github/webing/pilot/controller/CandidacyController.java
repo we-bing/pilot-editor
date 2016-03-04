@@ -81,7 +81,7 @@ public class CandidacyController {
             consumes = "application/json",
             value = "/{candidacyId}/status")
     public String updateCandidacyStatus(@PathVariable("candidacyId") int candidacyId, @RequestBody CandidacyMember candidacyMember) {
-        candidacyMember.setCandidacyId(candidacyId);
+        candidacyMember.setCandidacy_id(candidacyId);
         webingCoreService.updateCandidacyStatusWithCandidacyId(candidacyMember);
         return "success";
     }

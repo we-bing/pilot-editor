@@ -57,7 +57,7 @@
             email: $("input[name=email]").val(),
             password: $("input[name=password]").val(),
             name: $("input[name=name]").val(),
-            isOAuth: "F"
+            is_oauth: "F"
         };
 
         $.ajax({

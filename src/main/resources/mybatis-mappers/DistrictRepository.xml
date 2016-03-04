@@ -8,41 +8,41 @@
     <select id="findAll" resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        ORDER BY districtCode ASC
+        ORDER BY district_code ASC
     </select>
 
 
     <select id="findDistrictByDistrictCode" parameterType="int" resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        WHERE districtCode = #{districtCode}
+        WHERE district_code = #{district_code}
     </select>
 
     <select id="findDistrictByDistrictName" parameterType="java.lang.String"
             resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        WHERE districtName = #{districtName}
+        WHERE district_name = #{district_name}
     </select>
 
     <select id="findDistrictsByCityCode" parameterType="int" resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        WHERE cityCode = #{cityCode}
+        WHERE city_code = #{city_code}
     </select>
 
     <select id="findDistrictsWithTerms" parameterType="com.github.webing.pilot.model.District"
             resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        WHERE cityCode = #{cityCode} AND districtName LIKE CONCAT("%", #{districtName}, "%")
+        WHERE city_code = #{city_code} AND district_name LIKE CONCAT("%", #{district_name}, "%")
     </select>
 
     <select id="findDistrictWithTerms" parameterType="com.github.webing.pilot.model.District"
             resultType="com.github.webing.pilot.model.District">
         SELECT *
         FROM DISTRICTS
-        WHERE cityCode = #{cityCode} AND districtName = #{districtName}
+        WHERE city_code = #{city_code} AND district_name = #{district_name}
     </select>
 </mapper>
 

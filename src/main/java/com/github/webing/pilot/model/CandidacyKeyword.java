@@ -4,40 +4,40 @@ package com.github.webing.pilot.model;
  * Created by kd4 on 2016. 3. 3..
  */
 public class CandidacyKeyword {
-    private int keywordId;
-    private String keywordName;
-    private int candidacyId;
-    private String keywodStatus;
+    private int keyword_id;
+    private String keyword_name;
+    private int candidacy_id;
+    private String keyword_status;
 
-    public int getKeywordId() {
-        return keywordId;
+    public int getKeyword_id() {
+        return keyword_id;
     }
 
-    public void setKeywordId(int keywordId) {
-        this.keywordId = keywordId;
+    public void setKeyword_id(int keyword_id) {
+        this.keyword_id = keyword_id;
     }
 
-    public String getKeywordName() {
-        return keywordName;
+    public String getKeyword_name() {
+        return keyword_name;
     }
 
-    public void setKeywordName(String keywordName) {
-        this.keywordName = keywordName;
+    public void setKeyword_name(String keyword_name) {
+        this.keyword_name = keyword_name;
     }
 
-    public int getCandidacyId() {
-        return candidacyId;
+    public int getCandidacy_id() {
+        return candidacy_id;
     }
 
-    public void setCandidacyId(int candidacyId) {
-        this.candidacyId = candidacyId;
+    public void setCandidacy_id(int candidacy_id) {
+        this.candidacy_id = candidacy_id;
     }
 
-    public String getKeywodStatus() {
-        return keywodStatus;
+    public String getKeyword_status() {
+        return keyword_status;
     }
 
-    public void setKeywodStatus(String keywodStatus) {
-        this.keywodStatus = keywodStatus;
+    public void setKeyword_status(String keyword_status) {
+        this.keyword_status = keyword_status;
     }
 }

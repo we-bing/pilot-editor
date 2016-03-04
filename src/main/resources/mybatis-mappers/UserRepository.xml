@@ -27,18 +27,18 @@
     <select id="findUserByIdentity" parameterType="String" resultType="com.github.webing.pilot.model.User">
         SELECT *
         FROM USER_TB
-        WHERE identity = #{identity} AND userStatus = 'A'
+        WHERE identity = #{identity} AND user_status = 'A'
     </select>
 
     <select id="findUserByName" parameterType="String" resultType="com.github.webing.pilot.model.User">
         SELECT *
         FROM USER_TB
-        WHERE name = #{name} AND userStatus = 'A'
+        WHERE name = #{name} AND user_status = 'A'
     </select>
 
     <insert id="insertUser" parameterType="com.github.webing.pilot.model.User">
-        INSERT INTO USER_TB(identity,isOAuth,roles,name,email,password) VALUES
-        (#{identity},#{isOAuth},#{roles},#{name},#{email},#{password});
+        INSERT INTO USER_TB(identity,is_oauth,roles,name,email,password) VALUES
+        (#{identity},#{is_oauth},#{roles},#{name},#{email},#{password});
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -57,7 +57,7 @@
     </delete>
 
     <update id="updateUserStatus">
-        UPDATE USER_TB SET userStatus=#{userStatus} WHERE id=#{id}
+        UPDATE USER_TB SET user_status=#{user_status} WHERE id=#{id}
     </update>
 
 

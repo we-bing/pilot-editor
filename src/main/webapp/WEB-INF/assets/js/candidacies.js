@@ -30,12 +30,12 @@
             type: 'get',
             dataType: 'json',
             success: function (data) {
-                $('#modal-candidacy-id').val(data['candidacyId']);
-                $('#modal-district-code').val(data['districtCode']);
+                $('#modal-candidacy-id').val(data['candidacy_id']);
+                $('#modal-district-code').val(data['district_code']);
                 $('#candidacy-name').val(data['name']);
                 $('#candidacy-birth').val(data['birth']);
-                $('#district-name').val(data['districtName']);
-                $('input:radio[name=candidacyStatus]:input[value=' + data['candidacyStatus'] + ']').attr("checked", true);
+                $('#district-name').val(data['district_name']);
+                $("input:radio[name=candidacyStatus]:input[value='" + data['candidacy_status'] + "']").attr("checked", true);
                 $('#candidacy-modal').modal('toggle');
             }
         });
@@ -46,7 +46,7 @@
             dataType: 'json',
             success: function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    $("#candidacy-keywords").tagit("createTag", data[i]['keywordName']);
+                    $("#candidacy-keywords").tagit("createTag", data[i]['keyword_name']);
                 }
 
             }
@@ -61,13 +61,13 @@
                     var div = "<div class='pledge'><div class='form-group'><label>공약 제목</label> <button type='button' class='pull-right btn btn-default btn-sm delete-pledge'>" +
                         "<span class='glyphicon glyphicon-minus' aria-hidden='true'></span>" +
                         "</button>" +
-                        "<input type='text' class='form-control pledge-title' name='pledge-title' value='" + data[i]['pledgeTitle']
+                        "<input type='text' class='form-control pledge-title' name='pledge-title' value='" + data[i]['pledge_title']
                         + "' placeholder='공약 제목 입력하세요.'>" +
                         "</div>" +
                         "<div class='form-group'>" +
                         "<label>공약 상세</label>" +
                         "<textarea class='form-control pledge-description' name='pledge-description' rows='3' placeholder='공약 요약 입력하세요.'>" +
-                        data[i]['pledgeDescription'] + "</textarea>" +
+                        data[i]['pledge_description'] + "</textarea>" +
                         "</div>" +
                         "</div>";
 
@@ -90,7 +90,7 @@
                 success: function (data) {
                     var result = new Array();
                     for (var i = 0; i < data.length; i++) {
-                        result[i] = data[i]['districtName'];
+                        result[i] = data[i]['district_name'];
                     }
                     response(result);
                 }
@@ -137,8 +137,8 @@
                 var pledges = [];
                 for (var i = 0; i < $("input[name=pledge-title]").length; i++) {
                     var pledge = {
-                        pledgeTitle: $("input[name=pledge-title]")[i].value,
-                        pledgeDescription: $("textarea[name=pledge-description]")[i].value
+                        pledge_title: $("input[name=pledge-title]")[i].value,
+                        pledge_description: $("textarea[name=pledge-description]")[i].value
                     };
                     pledges.push(pledge);
                 }
@@ -151,8 +151,8 @@
                     success: function (isSuccess) {
 
                         var candidacyStatus = {
-                            cadidacyId: $('#modal-candidacy-id').val(),
-                            candidacyStatus: $(':radio[name="candidacyStatus"]:checked').val()
+                            cadidacy_id: $('#modal-candidacy-id').val(),
+                            candidacy_status: $(':radio[name="candidacyStatus"]:checked').val()
                         };
                         $.ajax({
                             url: '/candidacies/' + $('#modal-candidacy-id').val() + '/status',

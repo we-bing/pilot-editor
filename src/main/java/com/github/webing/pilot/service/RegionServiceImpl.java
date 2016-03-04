@@ -59,16 +59,16 @@ public class RegionServiceImpl implements RegionService {
     @Override
     public List<District> getDistrictsWithTerms(int cityCode, String query) {
         District district = new District();
-        district.setCityCode(cityCode);
-        district.setDistrictName(query);
+        district.setCity_code(cityCode);
+        district.setDistrict_name(query);
         return districtRepository.findDistrictsWithTerms(district);
     }
 
     @Override
     public int getDistrictWithTerms(int cityCode, String districtName) {
         District district = new District();
-        district.setCityCode(cityCode);
-        district.setDistrictName(districtName);
-        return districtRepository.findDistrictWithTerms(district).getDistrictCode();
+        district.setCity_code(cityCode);
+        district.setDistrict_name(districtName);
+        return districtRepository.findDistrictWithTerms(district).getDistrict_code();
     }
 }

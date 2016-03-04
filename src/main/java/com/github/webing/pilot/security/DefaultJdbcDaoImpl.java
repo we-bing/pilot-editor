@@ -37,7 +37,7 @@ public class DefaultJdbcDaoImpl implements UserDetailsService {
         if (user == null) {
             throw new InvalidUserException("가입된 유저가 아닙니다. 회원가입을 해주세요.");
         }
-        if (user.getIsOAuth().equals("T")) {
+        if (user.getIs_oauth().equals("T")) {
             throw new InvalidUserException("소셜 가입 유저입니다. 소셜 로그인을 이용해주세요.");
         }
         String password = user.getPassword();

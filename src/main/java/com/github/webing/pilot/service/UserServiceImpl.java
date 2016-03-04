@@ -116,7 +116,7 @@ public class UserServiceImpl implements UserService {
     public void updateUserStatusByUserId(int userId, String userStatus) {
         User user = new User();
         user.setId(userId);
-        user.setUserStatus(userStatus);
+        user.setUser_status(userStatus);
         userRepository.updateUserStatus(user);
 
     }

@@ -105,7 +105,7 @@ public class SocialController {
         user.setEmail(jObject.getString("email"));
         user.setName(jObject.getString("name"));
         user.setRoles("ROLE_USER");
-        user.setIsOAuth("T");
+        user.setIs_oauth("T");
         user.setPassword("");
         return user;
     }
@@ -162,7 +162,7 @@ public class SocialController {
             user.setEmail(String.valueOf(jObjectForUserInfo.getInt("id")));
             user.setName(jObjectForUserInfo.getJSONObject("properties").getString("nickname"));
             user.setRoles("ROLE_USER");
-            user.setIsOAuth("T");
+            user.setIs_oauth("T");
             user.setPassword("");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

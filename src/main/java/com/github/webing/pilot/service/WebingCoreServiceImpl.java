@@ -44,7 +44,7 @@ public class WebingCoreServiceImpl implements WebingCoreService {
 
     @Override
     public void addUser(User user) {
-        if (user.getIsOAuth().equals("F")) {
+        if (user.getIs_oauth().equals("F")) {
             userService.insertNormalUser(user);
         } else {
             userService.insertOAuthUser(user);

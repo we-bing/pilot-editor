@@ -4,22 +4,22 @@ package com.github.webing.pilot.model;
  * Created by kd4 on 2016. 3. 1..
  */
 public class City {
-    private int cityCode;
-    private String cityName;
+    private int city_code;
+    private String city_name;
 
-    public int getCityCode() {
-        return cityCode;
+    public int getCity_code() {
+        return city_code;
     }
 
-    public void setCityCode(int cityCode) {
-        this.cityCode = cityCode;
+    public void setCity_code(int city_code) {
+        this.city_code = city_code;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getCity_name() {
+        return city_name;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setCity_name(String city_name) {
+        this.city_name = city_name;
     }
 }

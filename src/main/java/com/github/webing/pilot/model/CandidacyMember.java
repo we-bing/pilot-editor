@@ -4,20 +4,20 @@ package com.github.webing.pilot.model;
  * Created by kd4 on 2016. 3. 1..
  */
 public class CandidacyMember {
-    private int candidacyId;
+    private int candidacy_id;
     private String name;
     private String birth;
     private String party;
-    private int districtCode;
-    private String districtName;
-    private String candidacyStatus;
+    private int district_code;
+    private String district_name;
+    private String candidacy_status;
 
-    public int getCandidacyId() {
-        return candidacyId;
+    public int getCandidacy_id() {
+        return candidacy_id;
     }
 
-    public void setCandidacyId(int candidacyId) {
-        this.candidacyId = candidacyId;
+    public void setCandidacy_id(int candidacy_id) {
+        this.candidacy_id = candidacy_id;
     }
 
     public String getName() {
@@ -36,35 +36,35 @@ public class CandidacyMember {
         this.birth = birth;
     }
 
-    public int getDistrictCode() {
-        return districtCode;
-    }
-
-    public void setDistrictCode(int districtCode) {
-        this.districtCode = districtCode;
-    }
-
-    public String getDistrictName() {
-        return districtName;
-    }
-
-    public void setDistrictName(String districtName) {
-        this.districtName = districtName;
-    }
-
-    public String getCandidacyStatus() {
-        return candidacyStatus;
-    }
-
-    public void setCandidacyStatus(String candidacyStatus) {
-        this.candidacyStatus = candidacyStatus;
-    }
-
     public String getParty() {
         return party;
     }
 
     public void setParty(String party) {
         this.party = party;
+    }
+
+    public int getDistrict_code() {
+        return district_code;
+    }
+
+    public void setDistrict_code(int district_code) {
+        this.district_code = district_code;
+    }
+
+    public String getDistrict_name() {
+        return district_name;
+    }
+
+    public void setDistrict_name(String district_name) {
+        this.district_name = district_name;
+    }
+
+    public String getCandidacy_status() {
+        return candidacy_status;
+    }
+
+    public void setCandidacy_status(String candidacy_status) {
+        this.candidacy_status = candidacy_status;
     }
 }

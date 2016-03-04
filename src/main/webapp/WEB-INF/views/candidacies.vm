@@ -65,14 +65,14 @@
             </thead>
             <tbody id="candidacy-table">
                 #foreach($candidacyMember in $candidacyMembers)
-                    #if($candidacyMember.candidacyStatus eq "C")
-                    <tr class="post-tr modal-up-post checked-row" data-candidacyId="$candidacyMember.candidacyId">
+                    #if($candidacyMember.candidacy_status eq "C")
+                    <tr class="post-tr modal-up-post checked-row" data-candidacyId="$candidacyMember.candidacy_id">
                     #else
-                    <tr class="post-tr modal-up-post" data-candidacyId="$candidacyMember.candidacyId">
+                    <tr class="post-tr modal-up-post" data-candidacyId="$candidacyMember.candidacy_id">
                     #end
-                    <td>$candidacyMember.candidacyStatus</td>
+                    <td>$candidacyMember.candidacy_status</td>
                     <td>$candidacyMember.name</td>
-                    <td>$candidacyMember.districtName</td>
+                    <td>$candidacyMember.district_name</td>
                     <td class="admin-tbody-date">$candidacyMember.birth</td>
                     <td>$candidacyMember.party</td>
                 </tr>

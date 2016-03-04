@@ -7,28 +7,28 @@
 
     <select id="findAll" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
-        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
+        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.district_code = dis.district_code
         ORDER BY candidacyId ASC
     </select>
 
 
     <select id="findByName" parameterType="java.lang.String" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
-        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
+        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.district_code = dis.district_code
         WHERE mem.name = #{name}
     </select>
 
     <select id="findByCandidacyId" parameterType="int" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
-        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
-        WHERE mem.candidacyId = #{candidacyId}
+        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.district_code = dis.district_code
+        WHERE mem.candidacy_id = #{candidacy_id}
     </select>
 
 
     <select id="findAllByDistrictCode" parameterType="int" resultType="com.github.webing.pilot.model.CandidacyMember">
         SELECT *
-        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.districtCode = dis.districtCode
-        WHERE mem.districtCode = #{districtCode}
+        FROM CANDIDACY_MEMBERS as mem LEFT JOIN DISTRICTS as dis ON mem.district_code = dis.district_code
+        WHERE mem.district_code = #{district_code}
     </select>
 
 
@@ -36,7 +36,7 @@
             resultType="com.github.webing.pilot.model.CandidacyKeyword">
         SELECT *
         FROM CANDIDACY_KEYWORDS
-        WHERE candidacyId = #{candidacyId}
+        WHERE candidacy_id = #{candidacy_id}
     </select>
 
 
@@ -44,31 +44,31 @@
             resultType="com.github.webing.pilot.model.CandidacyPledge">
         SELECT *
         FROM CANDIDACY_PLEDGE
-        WHERE candidacyId = #{candidacyId}
+        WHERE candidacy_id = #{candidacy_id}
     </select>
 
     <delete id="deleteKeywordsWithCandidacyId" parameterType="int">
         DELETE
         FROM CANDIDACY_KEYWORDS
-        WHERE candidacyId = #{candidacyId}
+        WHERE candidacy_id = #{candidacy_id}
     </delete>
 
     <insert id="insertKeywordWithCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyKeyword">
-        INSERT INTO CANDIDACY_KEYWORDS(candidacyId,keywordName) VALUES(#{candidacyId},#{keywordName})
+        INSERT INTO CANDIDACY_KEYWORDS(candidacy_id,keyword_name) VALUES(#{candidacy_id},#{keyword_name})
     </insert>
 
     <delete id="deletePledgesWithCandidacyId" parameterType="int">
         DELETE
         FROM CANDIDACY_PLEDGE
-        WHERE candidacyId = #{candidacyId}
+        WHERE candidacy_id = #{candidacy_id}
     </delete>
 
     <insert id="insertPledgeWithCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyPledge">
-        INSERT INTO CANDIDACY_PLEDGE(candidacyId,pledgeTitle,pledgeDescription) VALUES(#{candidacyId},#{pledgeTitle},#{pledgeDescription})
+        INSERT INTO CANDIDACY_PLEDGE(candidacy_id,pledge_title,pledge_description) VALUES(#{candidacy_id},#{pledge_title},#{pledge_description})
     </insert>
 
     <update id="updateStatusByCandidacyId" parameterType="com.github.webing.pilot.model.CandidacyMember">
-        UPDATE CANDIDACY_MEMBERS SET candidacyStatus = #{candidacyStatus} WHERE candidacyId = #{candidacyId}
+        UPDATE CANDIDACY_MEMBERS SET candidacy_status = #{candidacy_status} WHERE candidacy_id = #{candidacy_id}
     </update>
 
 

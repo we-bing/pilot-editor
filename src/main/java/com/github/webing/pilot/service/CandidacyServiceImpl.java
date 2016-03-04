@@ -52,9 +52,9 @@ public class CandidacyServiceImpl implements CandidacyService {
     public void resetKeywordsWithCandidacyId(int candidacyId, List<String> keywords) {
         candidacyRepository.deleteKeywordsWithCandidacyId(candidacyId);
         CandidacyKeyword candidacyKeyword = new CandidacyKeyword();
-        candidacyKeyword.setCandidacyId(candidacyId);
+        candidacyKeyword.setCandidacy_id(candidacyId);
         for (String keyword : keywords) {
-            candidacyKeyword.setKeywordName(keyword);
+            candidacyKeyword.setKeyword_name(keyword);
             candidacyRepository.insertKeywordWithCandidacyId(candidacyKeyword);
         }
     }
@@ -64,7 +64,7 @@ public class CandidacyServiceImpl implements CandidacyService {
         candidacyRepository.deletePledgesWithCandidacyId(candidacyId);
 
         for (CandidacyPledge pledge : pledges) {
-            pledge.setCandidacyId(candidacyId);
+            pledge.setCandidacy_id(candidacyId);
             candidacyRepository.insertPledgeWithCandidacyId(pledge);
         }
     }
