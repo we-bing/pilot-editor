@@ -32,7 +32,7 @@ public class IndexController {
     @RequestMapping(method = RequestMethod.GET)
     public String root(HttpServletRequest request) {
         logger.debug("a user access the server : " + request.getRemoteHost());
-        return "redirect:/editors";
+        return "redirect:/candidacies";
     }
 
 
