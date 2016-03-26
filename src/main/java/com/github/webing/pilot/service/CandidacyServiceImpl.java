@@ -73,4 +73,9 @@ public class CandidacyServiceImpl implements CandidacyService {
     public void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember) {
         candidacyRepository.updateStatusByCandidacyId(candidacyMember);
     }
+
+    @Override
+    public List<CandidacyMember> getCandidacyMembersByCityCode(int cityCode) {
+        return candidacyRepository.findWithCityCode(cityCode);
+    }
 }

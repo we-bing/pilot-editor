@@ -34,4 +34,6 @@ public interface CandidacyRepository {
     void insertPledgeWithCandidacyId(CandidacyPledge pledge);
 
     void updateStatusByCandidacyId(CandidacyMember candidacyMember);
+
+    List<CandidacyMember> findWithCityCode(int cityCode);
 }

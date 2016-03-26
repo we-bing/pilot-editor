@@ -37,10 +37,10 @@
         </encoder>
     </appender>
 
-    <!--<logger name="com.github.webing.pilot" level="debug">-->
-    <!--<appender-ref ref="console"/>-->
-    <!--<appender-ref ref="fileForLoginInterceptor"/>-->
-    <!--</logger>-->
+    <logger name="com.github.webing.pilot" level="debug">
+    <appender-ref ref="console"/>
+    <appender-ref ref="fileForLoginInterceptor"/>
+    </logger>
 
     <logger name="org.springframework" level="info"/>
     <root level="info">

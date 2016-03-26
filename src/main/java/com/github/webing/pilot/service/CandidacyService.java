@@ -27,4 +27,6 @@ public interface CandidacyService {
     void resetCandidacyPledges(int candidacyId, List<CandidacyPledge> pledges);
 
     void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember);
+
+    List<CandidacyMember> getCandidacyMembersByCityCode(int cityCode);
 }

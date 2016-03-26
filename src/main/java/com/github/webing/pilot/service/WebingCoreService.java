@@ -54,4 +54,5 @@ public interface WebingCoreService {
 
     void updateCandidacyStatusWithCandidacyId(CandidacyMember candidacyMember);
 
+    List<CandidacyMember> getCandidacyMembersByCityCode(int cityCode);
 }

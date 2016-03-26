@@ -151,5 +151,10 @@ public class WebingCoreServiceImpl implements WebingCoreService {
         candidacyService.updateCandidacyStatusWithCandidacyId(candidacyMember);
     }
 
+    @Override
+    public List<CandidacyMember> getCandidacyMembersByCityCode(int cityCode) {
+        return candidacyService.getCandidacyMembersByCityCode(cityCode);
+    }
+
 
 }

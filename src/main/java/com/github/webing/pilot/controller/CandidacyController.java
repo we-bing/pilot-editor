@@ -31,9 +31,14 @@ public class CandidacyController {
         if (cityCode == 0) {
             return mav;
         }
-        int districtCode = webingCoreService.getDistrictWithTerms(cityCode, districtName);
-        List<CandidacyMember> candidacyMembers = webingCoreService.getCandidacyMembersByDistrictCode(districtCode);
-        mav.addObject("candidacyMembers", candidacyMembers);
+        if(districtName.equals("none")){
+            List<CandidacyMember> candidacyMembers = webingCoreService.getCandidacyMembersByCityCode(cityCode);
+            mav.addObject("candidacyMembers", candidacyMembers);
+        }else {
+            int districtCode = webingCoreService.getDistrictWithTerms(cityCode, districtName);
+            List<CandidacyMember> candidacyMembers = webingCoreService.getCandidacyMembersByDistrictCode(districtCode);
+            mav.addObject("candidacyMembers", candidacyMembers);
+        }
         return mav;
     }
 
